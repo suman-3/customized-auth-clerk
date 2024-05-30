@@ -6,10 +6,13 @@ import Link from "next/link";
 
 export default function Home() {
   const { user } = useUser();
+
   return (
     <main className="min-h-screen h-full w-full flex items-center justify-center">
       {user ? (
-        <UserButton />
+        <div>
+          <UserButton afterSignOutUrl="/" />
+        </div>
       ) : (
         <Link href="/auth/sign-in">
           <Button>Sign In</Button>
